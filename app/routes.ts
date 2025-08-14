@@ -1,25 +1,14 @@
 
 import {
   type RouteConfig,
+  layout,
   route,
 } from "@react-router/dev/routes";
 
 export default [
-  route('dashboard', './routes/admin/dashboard.tsx'),
+  layout('routes/admin/admin-layout.tsx', [
+    route('dashboard', './routes/admin/dashboard.tsx'),
+    route('all-users', '/routes/admin/all-users.tsx'),
+  ]),
+  
 ] satisfies RouteConfig;
-
-
-// import {
-//   type RouteConfig,
-//   route,
-//   index,
-// } from "@react-router/dev/routes";
-
-// export default [
-//   // parent route
-//   route("dashboard", "./routes/admin/dashboard.tsx", [
-//     // child routes
-//     // index("./home.tsx"),
-//     // route("settings", "./settings.tsx"),
-//   ]),
-// ] satisfies RouteConfig;
